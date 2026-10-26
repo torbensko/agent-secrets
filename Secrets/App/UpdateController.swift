@@ -3,7 +3,7 @@ import Sparkle
 import SwiftUI
 
 struct UpdatePolicy {
-    static let feed = "https://github.com/torbensko/secrets/releases/latest/download/appcast.xml"
+    static let feed = "https://github.com/torbensko/agent-secrets/releases/latest/download/appcast.xml"
 
     static func permitsUpdates(identifier: String?, channel: String?, feed: String?, publicKey: String?) -> Bool {
         identifier == "com.torbensko.secrets" && channel == "Release" && feed == Self.feed

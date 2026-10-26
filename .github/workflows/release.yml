@@ -91,8 +91,8 @@ jobs:
         with:
           name: signed-release
           path: |
-            dist/Secrets.dmg
-            dist/Secrets.zip
+            dist/Agent-Secrets.dmg
+            dist/Agent-Secrets.zip
             dist/appcast.xml
             dist/SHA256SUMS.txt
           if-no-files-found: error
@@ -114,6 +114,6 @@ jobs:
         run: |
           (cd artifacts && sha256sum --check SHA256SUMS.txt)
           gh release create "v$RELEASE_VERSION" --draft --target "$GITHUB_SHA" \
-            --title "Secrets $RELEASE_VERSION" --notes-file RELEASE_NOTES.md \
-            artifacts/Secrets.dmg artifacts/Secrets.zip artifacts/appcast.xml artifacts/SHA256SUMS.txt
+            --title "Agent Secrets $RELEASE_VERSION" --notes-file RELEASE_NOTES.md \
+            artifacts/Agent-Secrets.dmg artifacts/Agent-Secrets.zip artifacts/appcast.xml artifacts/SHA256SUMS.txt
           gh release edit "v$RELEASE_VERSION" --draft=false --latest

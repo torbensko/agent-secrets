@@ -18,7 +18,7 @@ struct SecretsApp: App {
     @StateObject private var updates = UpdateController()
 
     var body: some Scene {
-        Window("Secrets", id: "main") {
+        Window("Agent Secrets", id: "main") {
             ContentView()
                 .environment(model)
         }

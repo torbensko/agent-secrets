@@ -14,18 +14,18 @@ struct SettingsView: View {
 
 private struct AgentsSettings: View {
     private var executablePath: String {
-        Bundle.main.executablePath ?? "/Applications/Secrets.app/Contents/MacOS/Secrets"
+        Bundle.main.executablePath ?? "/Applications/Agent Secrets.app/Contents/MacOS/Agent Secrets"
     }
 
     private var claudeCommand: String {
-        "claude mcp add --scope user secrets -- '\(executablePath)' --mcp"
+        "claude mcp add --scope user agent-secrets -- '\(executablePath)' --mcp"
     }
 
     private var jsonConfig: String {
         """
         {
           "mcpServers": {
-            "secrets": {
+            "agent-secrets": {
               "command": "\(executablePath)",
               "args": ["--mcp"]
             }
@@ -41,7 +41,7 @@ private struct AgentsSettings: View {
             } header: {
                 Text("Claude Code")
             } footer: {
-                Text("Adds Secrets for every project. Each session only sees the credentials of the authorised folder it starts in.")
+                Text("Adds Agent Secrets for every project. Each session only sees the credentials of the authorised folder it starts in.")
             }
 
             Section {

@@ -1,10 +1,10 @@
-# Secrets
+# Agent Secrets
 
 A native macOS app that manages a curated set of development credentials in the Keychain and serves them to coding agents over MCP, scoped by project and authorised folder.
 
-![Adding a Cloudflare API token in Secrets](Brand/screenshots/secrets-screenshot-01.jpg)
+![Adding a Cloudflare API token in Agent Secrets](Brand/screenshots/secrets-screenshot-01.jpg)
 
-![Choosing a service preset in Secrets](Brand/screenshots/secrets-screenshot-02.jpg)
+![Choosing a service preset in Agent Secrets](Brand/screenshots/secrets-screenshot-02.jpg)
 
 ## Purpose
 
@@ -139,7 +139,7 @@ Releases are built, signed, notarized and published by GitHub Actions, with Spar
 
 ### Implementation notes
 
-- **MCP server is the app binary.** Agents run `Secrets.app/Contents/MacOS/Secrets --mcp`. The server shares the app's code signature, so it has the same Keychain access with no extra signing or provisioning. Settings → Agents shows the exact command to add.
+- **MCP server is the app binary.** Agents run `Agent Secrets.app/Contents/MacOS/Agent Secrets --mcp`. The server shares the app's code signature, so it has the same Keychain access with no extra signing or provisioning. Settings → Agents shows the exact command to add.
 - **Keychain layout.** Each credential is two synchronizable generic-password items, metadata (`com.torbensko.secrets.credential`) and values (`com.torbensko.secrets.secret`), both keyed by the credential's UUID. Keeping them separate is what lets the app tell a registered-but-missing credential from one that doesn't exist. Projects and services are items too, so everything except folders and activity syncs through iCloud Keychain.
 - **Signing.** iCloud Keychain sync needs the `keychain-access-groups` entitlement, which needs a provisioning profile, so this Mac must be registered with the team. A build without the entitlement falls back to the login keychain on this Mac only (Settings → Storage shows which is in use).
 - **Per-machine data** lives in `~/Library/Application Support/com.torbensko.secrets`: `folders.json` (authorised folders) and `activity.jsonl` (the access log). Neither contains secrets.

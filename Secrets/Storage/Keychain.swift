@@ -45,7 +45,7 @@ struct Keychain: Sendable {
         let iCloud = Keychain(mode: .iCloud, servicePrefix: servicePrefix)
         let account = "probe-\(UUID().uuidString)"
         do {
-            try iCloud.set(Data(), kind: .probe, account: account, label: "Secrets keychain check")
+            try iCloud.set(Data(), kind: .probe, account: account, label: "Agent Secrets keychain check")
             try? iCloud.delete(kind: .probe, account: account)
             return iCloud
         } catch let failure as Failure where failure.status == errSecMissingEntitlement {

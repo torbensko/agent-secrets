@@ -9,7 +9,7 @@ func fail(_ message: String) -> Never {
 // Validate the final public payload against the key embedded in the app, not
 // merely against whichever private key the release runner happens to possess.
 guard CommandLine.arguments.count == 6 else {
-    fail("Usage: verify-appcast.swift appcast.xml Secrets.zip public-key.txt version build")
+    fail("Usage: verify-appcast.swift appcast.xml Agent-Secrets.zip public-key.txt version build")
 }
 let args = CommandLine.arguments
 let document = try XMLDocument(contentsOf: URL(fileURLWithPath: args[1]))
@@ -18,7 +18,7 @@ guard items.count == 1, let item = items.first as? XMLElement,
       let enclosure = item.elements(forName: "enclosure").first,
       let signatureString = enclosure.attribute(forName: "sparkle:edSignature")?.stringValue,
       let signature = Data(base64Encoded: signatureString),
-      enclosure.attribute(forName: "url")?.stringValue == "https://github.com/torbensko/secrets/releases/download/v\(args[4])/Secrets.zip",
+      enclosure.attribute(forName: "url")?.stringValue == "https://github.com/torbensko/agent-secrets/releases/download/v\(args[4])/Agent-Secrets.zip",
       item.elements(forName: "sparkle:version").first?.stringValue == args[5],
       item.elements(forName: "sparkle:shortVersionString").first?.stringValue == args[4],
       item.elements(forName: "sparkle:minimumSystemVersion").first?.stringValue == "15.0",

@@ -7,7 +7,7 @@ import Foundation
 /// directory. Bindings, metadata and the registry are re-read on every call, so revoking a folder or
 /// untagging a credential takes effect immediately.
 final class MCPServer {
-    static let name = "secrets"
+    static let name = "agent-secrets"
     static let supportedProtocolVersions = ["2025-06-18", "2025-03-26", "2024-11-05"]
 
     private let vault: Vault
@@ -72,7 +72,7 @@ final class MCPServer {
         return [
             "protocolVersion": version,
             "capabilities": ["tools": ["listChanged": false]],
-            "serverInfo": ["name": Self.name, "title": "Secrets", "version": appVersion],
+            "serverInfo": ["name": Self.name, "title": "Agent Secrets", "version": appVersion],
             "instructions": """
                 Provides development credentials (API tokens, keys) for the project this folder belongs to. \
                 Call list_credentials to see what's available, then get_credential to read values. \
@@ -161,20 +161,20 @@ final class MCPServer {
             return ["content": [["type": "text", "text": error.message]], "isError": true]
         } catch {
             record(tool: tool, binding: binding, outcome: .failed, detail: error.localizedDescription)
-            return ["content": [["type": "text", "text": "Secrets couldn't read the Keychain: \(error.localizedDescription)"]], "isError": true]
+            return ["content": [["type": "text", "text": "Agent Secrets couldn't read the Keychain: \(error.localizedDescription)"]], "isError": true]
         }
     }
 
     private func bind() throws -> Binding {
         guard let grant = AccessResolver.grant(for: workingDirectory, in: registry.load()) else {
             throw ToolError(
-                message: "The folder '\(workingDirectory)' isn't authorised to use any credentials. Ask the owner to open Secrets and grant this folder (or a parent folder) access to a project under Folders.",
+                message: "The folder '\(workingDirectory)' isn't authorised to use any credentials. Ask the owner to open Agent Secrets and grant this folder (or a parent folder) access to a project under Folders.",
                 outcome: .denied
             )
         }
         guard let project = try vault.projects().first(where: { $0.id == grant.projectID }) else {
             throw ToolError(
-                message: "The folder '\(grant.path)' is authorised for a project that no longer exists. Ask the owner to reassign it in Secrets.",
+                message: "The folder '\(grant.path)' is authorised for a project that no longer exists. Ask the owner to reassign it in Agent Secrets.",
                 outcome: .denied
             )
         }
@@ -256,7 +256,7 @@ final class MCPServer {
 
         guard let values = try vault.values(for: match.id) else {
             throw ToolError(
-                message: "'\(match.name)' for \(serviceName) is registered but not present in the Keychain on this Mac. Ask the owner to re-enter it in Secrets.",
+                message: "'\(match.name)' for \(serviceName) is registered but not present in the Keychain on this Mac. Ask the owner to re-enter it in Agent Secrets.",
                 outcome: .missing, service: serviceName, credential: match.name
             )
         }

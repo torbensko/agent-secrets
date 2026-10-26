@@ -41,7 +41,7 @@ final class Vault: Sendable {
     // MARK: Writing
 
     func save(_ project: Project) throws {
-        try write(project, kind: .project, account: project.id, label: "Secrets project: \(project.name)")
+        try write(project, kind: .project, account: project.id, label: "Agent Secrets project: \(project.name)")
     }
 
     func deleteProject(_ id: UUID) throws {
@@ -49,7 +49,7 @@ final class Vault: Sendable {
     }
 
     func save(_ service: Service) throws {
-        try write(service, kind: .service, account: service.id, label: "Secrets service: \(service.name)")
+        try write(service, kind: .service, account: service.id, label: "Agent Secrets service: \(service.name)")
     }
 
     func deleteService(_ id: UUID) throws {
@@ -59,7 +59,7 @@ final class Vault: Sendable {
     /// Saves metadata, and values when given. Values are written first so a failure can't leave
     /// freshly registered metadata without its secret.
     func save(_ credential: Credential, values: CredentialValues?, serviceName: String) throws {
-        let label = "Secrets: \(serviceName) – \(credential.name)"
+        let label = "Agent Secrets: \(serviceName) – \(credential.name)"
         if let values {
             try write(values, kind: .secret, account: credential.id, label: label)
         }

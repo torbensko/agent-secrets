@@ -19,5 +19,5 @@ fi
 secret_dir="$(mktemp -d "${TMPDIR:-/tmp}/secrets-update-key.XXXXXX")"
 trap 'rm -rf "$secret_dir"' EXIT
 "$tool" --account "$account" -x "$secret_dir/key" > /dev/null
-gh secret set SPARKLE_PRIVATE_KEY --repo torbensko/secrets < "$secret_dir/key"
+gh secret set SPARKLE_PRIVATE_KEY --repo torbensko/agent-secrets < "$secret_dir/key"
 echo 'Secrets update signing configured. The original private key remains in your login Keychain.'
