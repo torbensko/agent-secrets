@@ -1,6 +1,10 @@
-# Dev Credentials — README
+# Secrets
 
 A native macOS app that manages a curated set of development credentials in the Keychain and serves them to coding agents over MCP, scoped by project and authorised folder.
+
+![Adding a Cloudflare API token in Secrets](Brand/screenshots/secrets-screenshot-01.jpg)
+
+![Choosing a service preset in Secrets](Brand/screenshots/secrets-screenshot-02.jpg)
 
 ## Purpose
 

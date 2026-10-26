@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		009AEA8E98CD01A2B88DF936 /* CredentialsBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33572D8AF7B87F5EEA22333E /* CredentialsBrowser.swift */; };
+		289CB66141C246A67587E8F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D92A655F87C1865A6170511E /* Assets.xcassets */; };
 		392D764A0265503E17DAA235 /* IconCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9DD44762DBA880F994142 /* IconCache.swift */; };
 		3AD36CDAD97763E4D3302EAD /* SecretsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D4A4D1A4FCB19B53FE6A57 /* SecretsApp.swift */; };
 		438B478CA5BA8308EEE041DE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655F7A7ADDFC8CE98EF74E9 /* SettingsView.swift */; };
@@ -69,6 +70,7 @@
 		D5D4A4D1A4FCB19B53FE6A57 /* SecretsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretsApp.swift; sourceTree = "<group>"; };
 		D6ADFE706ACF3E6C8D184157 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D7738E73263264D8A84D430D /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		D92A655F87C1865A6170511E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2DE0845C5F7B3613797417C /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		F6242EB923F769E09C43F2F0 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		FC46E436D10ED315A91A4CDA /* SecretsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecretsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +119,7 @@
 		539CACEAA9ECD7F3FC0137D8 /* Secrets */ = {
 			isa = PBXGroup;
 			children = (
+				D92A655F87C1865A6170511E /* Assets.xcassets */,
 				D6ADFE706ACF3E6C8D184157 /* Info.plist */,
 				7C5139DFA657C51B01268C60 /* Secrets.entitlements */,
 				9AA34CF7B48EAF6DB962C2A1 /* App */,
@@ -200,6 +203,7 @@
 			buildConfigurationList = BE2852153D4D5AF8066FFB5D /* Build configuration list for PBXNativeTarget "Secrets" */;
 			buildPhases = (
 				FE0AC6207DA9A538B4AAEA82 /* Sources */,
+				0D789A6D09FEFB81811F4240 /* Resources */,
 				1EE357E3E635F67FC5F2DA07 /* Frameworks */,
 			);
 			buildRules = (
@@ -273,6 +277,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0D789A6D09FEFB81811F4240 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				289CB66141C246A67587E8F4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E24C02F138EB66D8381FB2BD /* Sources */ = {
