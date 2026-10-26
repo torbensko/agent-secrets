@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		009AEA8E98CD01A2B88DF936 /* CredentialsBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33572D8AF7B87F5EEA22333E /* CredentialsBrowser.swift */; };
+		392D764A0265503E17DAA235 /* IconCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9DD44762DBA880F994142 /* IconCache.swift */; };
+		3AD36CDAD97763E4D3302EAD /* SecretsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D4A4D1A4FCB19B53FE6A57 /* SecretsApp.swift */; };
+		438B478CA5BA8308EEE041DE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655F7A7ADDFC8CE98EF74E9 /* SettingsView.swift */; };
+		4AD9745DB65CD9B3F0442ADF /* ServicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7E5320D2413466068BB466 /* ServicePicker.swift */; };
+		57B873040FC8CDFCF5623C27 /* CredentialEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D57D9D733AD6D88195703 /* CredentialEditView.swift */; };
+		6A864EFF8ABEB99288BAA7E3 /* AccessResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343A124AAF171449B55A9AD2 /* AccessResolverTests.swift */; };
+		6FB7DB11682F7F6DDAE25525 /* MCPServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4857E00F7E1672975B1AE /* MCPServerTests.swift */; };
+		76A4D405FF68B07E0DF59515 /* Vault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136E0DCB9390CAC81BDF92E /* Vault.swift */; };
+		83EA2C0418DF1BAE4A219C08 /* LocalStores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48967D0A0DEF965525F53B50 /* LocalStores.swift */; };
+		844156C71E4456AFF7B02FD4 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4300D349D2B931EF447722 /* Keychain.swift */; };
+		867F15D22A02E64C92A6517F /* ServiceIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C354BCB04862530CD7BB2E2 /* ServiceIcon.swift */; };
+		96090ECC63C59828DC145141 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7738E73263264D8A84D430D /* ActivityView.swift */; };
+		97369B2C29D980520F0CF6CB /* CredentialDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30752CC6DD02590DEC11173F /* CredentialDetailView.swift */; };
+		9D562B3C3385C8934DF4864F /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DE0845C5F7B3613797417C /* Models.swift */; };
+		9DF59BEBAAD1C31E4B3C811D /* FoldersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89742C9E1BAB8546954E1E94 /* FoldersView.swift */; };
+		A918D8908303DB2DE7F4C659 /* IconFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCA2E68EEB8E8FA3F0C8862 /* IconFetcher.swift */; };
+		CC57952F1210AED220058C66 /* MCPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422C806EF1A0878D0BCEA91 /* MCPServer.swift */; };
+		D0894C982998FDC8B3953F4E /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 2FA7580E12C0D3F8EB11DF92 /* Sparkle */; };
+		D60F559F44FAC498D47A91F6 /* UpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E126DB2B8860B877AB63445 /* UpdateController.swift */; };
+		DF2BA1D856E743D01FACFCC7 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6242EB923F769E09C43F2F0 /* AppModel.swift */; };
+		DFF8ED8070F339123ECC653A /* CredentialDraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC485F2699C1609FDF4E391 /* CredentialDraft.swift */; };
+		E59A7258DAEA9AE8B6EF35E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26924A90D3ABCE662FB269A /* ContentView.swift */; };
+		FC3E26A650C69B72338E75B5 /* ServiceTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628F969FA87784332EDDDF9B /* ServiceTemplate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B694C9B773FEDE7BDFBC7AB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D3191435FAD86CCCF928E13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 64A4E8602C6FFDD57DDE5262;
+			remoteInfo = Secrets;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0422C806EF1A0878D0BCEA91 /* MCPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCPServer.swift; sourceTree = "<group>"; };
+		0725044EBB94089B1CFFF3AD /* Secrets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Secrets.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B4300D349D2B931EF447722 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		1BCA2E68EEB8E8FA3F0C8862 /* IconFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconFetcher.swift; sourceTree = "<group>"; };
+		30752CC6DD02590DEC11173F /* CredentialDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialDetailView.swift; sourceTree = "<group>"; };
+		3136E0DCB9390CAC81BDF92E /* Vault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vault.swift; sourceTree = "<group>"; };
+		33572D8AF7B87F5EEA22333E /* CredentialsBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsBrowser.swift; sourceTree = "<group>"; };
+		343A124AAF171449B55A9AD2 /* AccessResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessResolverTests.swift; sourceTree = "<group>"; };
+		48967D0A0DEF965525F53B50 /* LocalStores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStores.swift; sourceTree = "<group>"; };
+		5433ADEB9471A40F7F600DDE /* Updates.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Updates.xcconfig; sourceTree = "<group>"; };
+		628F969FA87784332EDDDF9B /* ServiceTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTemplate.swift; sourceTree = "<group>"; };
+		77F4857E00F7E1672975B1AE /* MCPServerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCPServerTests.swift; sourceTree = "<group>"; };
+		78B9DD44762DBA880F994142 /* IconCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCache.swift; sourceTree = "<group>"; };
+		7C5139DFA657C51B01268C60 /* Secrets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Secrets.entitlements; sourceTree = "<group>"; };
+		89742C9E1BAB8546954E1E94 /* FoldersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersView.swift; sourceTree = "<group>"; };
+		8C354BCB04862530CD7BB2E2 /* ServiceIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceIcon.swift; sourceTree = "<group>"; };
+		8E126DB2B8860B877AB63445 /* UpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateController.swift; sourceTree = "<group>"; };
+		A26924A90D3ABCE662FB269A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AB7E5320D2413466068BB466 /* ServicePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePicker.swift; sourceTree = "<group>"; };
+		B655F7A7ADDFC8CE98EF74E9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C69D57D9D733AD6D88195703 /* CredentialEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialEditView.swift; sourceTree = "<group>"; };
+		CFC485F2699C1609FDF4E391 /* CredentialDraft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialDraft.swift; sourceTree = "<group>"; };
+		D5D4A4D1A4FCB19B53FE6A57 /* SecretsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretsApp.swift; sourceTree = "<group>"; };
+		D6ADFE706ACF3E6C8D184157 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D7738E73263264D8A84D430D /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		F2DE0845C5F7B3613797417C /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		F6242EB923F769E09C43F2F0 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		FC46E436D10ED315A91A4CDA /* SecretsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecretsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1EE357E3E635F67FC5F2DA07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0894C982998FDC8B3953F4E /* Sparkle in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		48844516BA4BEF41FB6BF7CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2DE0845C5F7B3613797417C /* Models.swift */,
+				628F969FA87784332EDDDF9B /* ServiceTemplate.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4932D42EC16297CB65CCDEF0 /* SecretsTests */ = {
+			isa = PBXGroup;
+			children = (
+				343A124AAF171449B55A9AD2 /* AccessResolverTests.swift */,
+				77F4857E00F7E1672975B1AE /* MCPServerTests.swift */,
+			);
+			path = SecretsTests;
+			sourceTree = "<group>";
+		};
+		52BCF8A9735DD875246A0D1B = {
+			isa = PBXGroup;
+			children = (
+				DD26BF15DCCCBA541E3AE4F0 /* Config */,
+				539CACEAA9ECD7F3FC0137D8 /* Secrets */,
+				4932D42EC16297CB65CCDEF0 /* SecretsTests */,
+				A62103983C544FFD399D4055 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		539CACEAA9ECD7F3FC0137D8 /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+				D6ADFE706ACF3E6C8D184157 /* Info.plist */,
+				7C5139DFA657C51B01268C60 /* Secrets.entitlements */,
+				9AA34CF7B48EAF6DB962C2A1 /* App */,
+				A2D74D93B82078071392519E /* MCP */,
+				48844516BA4BEF41FB6BF7CF /* Model */,
+				D1422FA52E9DD257F8DBCA9B /* Storage */,
+				5BFC69113898733BB21A5E08 /* Views */,
+			);
+			path = Secrets;
+			sourceTree = "<group>";
+		};
+		5BFC69113898733BB21A5E08 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D7738E73263264D8A84D430D /* ActivityView.swift */,
+				A26924A90D3ABCE662FB269A /* ContentView.swift */,
+				30752CC6DD02590DEC11173F /* CredentialDetailView.swift */,
+				C69D57D9D733AD6D88195703 /* CredentialEditView.swift */,
+				33572D8AF7B87F5EEA22333E /* CredentialsBrowser.swift */,
+				89742C9E1BAB8546954E1E94 /* FoldersView.swift */,
+				78B9DD44762DBA880F994142 /* IconCache.swift */,
+				1BCA2E68EEB8E8FA3F0C8862 /* IconFetcher.swift */,
+				8C354BCB04862530CD7BB2E2 /* ServiceIcon.swift */,
+				AB7E5320D2413466068BB466 /* ServicePicker.swift */,
+				B655F7A7ADDFC8CE98EF74E9 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9AA34CF7B48EAF6DB962C2A1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F6242EB923F769E09C43F2F0 /* AppModel.swift */,
+				CFC485F2699C1609FDF4E391 /* CredentialDraft.swift */,
+				D5D4A4D1A4FCB19B53FE6A57 /* SecretsApp.swift */,
+				8E126DB2B8860B877AB63445 /* UpdateController.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A2D74D93B82078071392519E /* MCP */ = {
+			isa = PBXGroup;
+			children = (
+				0422C806EF1A0878D0BCEA91 /* MCPServer.swift */,
+			);
+			path = MCP;
+			sourceTree = "<group>";
+		};
+		A62103983C544FFD399D4055 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0725044EBB94089B1CFFF3AD /* Secrets.app */,
+				FC46E436D10ED315A91A4CDA /* SecretsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D1422FA52E9DD257F8DBCA9B /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				0B4300D349D2B931EF447722 /* Keychain.swift */,
+				48967D0A0DEF965525F53B50 /* LocalStores.swift */,
+				3136E0DCB9390CAC81BDF92E /* Vault.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		DD26BF15DCCCBA541E3AE4F0 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				5433ADEB9471A40F7F600DDE /* Updates.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		64A4E8602C6FFDD57DDE5262 /* Secrets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE2852153D4D5AF8066FFB5D /* Build configuration list for PBXNativeTarget "Secrets" */;
+			buildPhases = (
+				FE0AC6207DA9A538B4AAEA82 /* Sources */,
+				1EE357E3E635F67FC5F2DA07 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Secrets;
+			packageProductDependencies = (
+				2FA7580E12C0D3F8EB11DF92 /* Sparkle */,
+			);
+			productName = Secrets;
+			productReference = 0725044EBB94089B1CFFF3AD /* Secrets.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E5FE0CACE564C062B61381A3 /* SecretsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13C361D01B36412923D688FA /* Build configuration list for PBXNativeTarget "SecretsTests" */;
+			buildPhases = (
+				E24C02F138EB66D8381FB2BD /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55946058013BD776742077A2 /* PBXTargetDependency */,
+			);
+			name = SecretsTests;
+			packageProductDependencies = (
+			);
+			productName = SecretsTests;
+			productReference = FC46E436D10ED315A91A4CDA /* SecretsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8D3191435FAD86CCCF928E13 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					64A4E8602C6FFDD57DDE5262 = {
+						DevelopmentTeam = D6WA425MQA;
+						ProvisioningStyle = Automatic;
+					};
+					E5FE0CACE564C062B61381A3 = {
+						DevelopmentTeam = D6WA425MQA;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 42507A8A5C9971C69BE94831 /* Build configuration list for PBXProject "Secrets" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 52BCF8A9735DD875246A0D1B;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C37F893C298E029C772181B6 /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = A62103983C544FFD399D4055 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				64A4E8602C6FFDD57DDE5262 /* Secrets */,
+				E5FE0CACE564C062B61381A3 /* SecretsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E24C02F138EB66D8381FB2BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A864EFF8ABEB99288BAA7E3 /* AccessResolverTests.swift in Sources */,
+				6FB7DB11682F7F6DDAE25525 /* MCPServerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE0AC6207DA9A538B4AAEA82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96090ECC63C59828DC145141 /* ActivityView.swift in Sources */,
+				DF2BA1D856E743D01FACFCC7 /* AppModel.swift in Sources */,
+				E59A7258DAEA9AE8B6EF35E8 /* ContentView.swift in Sources */,
+				97369B2C29D980520F0CF6CB /* CredentialDetailView.swift in Sources */,
+				DFF8ED8070F339123ECC653A /* CredentialDraft.swift in Sources */,
+				57B873040FC8CDFCF5623C27 /* CredentialEditView.swift in Sources */,
+				009AEA8E98CD01A2B88DF936 /* CredentialsBrowser.swift in Sources */,
+				9DF59BEBAAD1C31E4B3C811D /* FoldersView.swift in Sources */,
+				392D764A0265503E17DAA235 /* IconCache.swift in Sources */,
+				A918D8908303DB2DE7F4C659 /* IconFetcher.swift in Sources */,
+				844156C71E4456AFF7B02FD4 /* Keychain.swift in Sources */,
+				83EA2C0418DF1BAE4A219C08 /* LocalStores.swift in Sources */,
+				CC57952F1210AED220058C66 /* MCPServer.swift in Sources */,
+				9D562B3C3385C8934DF4864F /* Models.swift in Sources */,
+				3AD36CDAD97763E4D3302EAD /* SecretsApp.swift in Sources */,
+				867F15D22A02E64C92A6517F /* ServiceIcon.swift in Sources */,
+				4AD9745DB65CD9B3F0442ADF /* ServicePicker.swift in Sources */,
+				FC3E26A650C69B72338E75B5 /* ServiceTemplate.swift in Sources */,
+				438B478CA5BA8308EEE041DE /* SettingsView.swift in Sources */,
+				D60F559F44FAC498D47A91F6 /* UpdateController.swift in Sources */,
+				76A4D405FF68B07E0DF59515 /* Vault.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		55946058013BD776742077A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 64A4E8602C6FFDD57DDE5262 /* Secrets */;
+			targetProxy = B694C9B773FEDE7BDFBC7AB2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2AC088B06AF365193A79C073 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.torbensko.SecretsTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Secrets.app/Contents/MacOS/Secrets";
+			};
+			name = Debug;
+		};
+		3D2CFF93FDA2CCDA4F7DE668 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5433ADEB9471A40F7F600DDE /* Updates.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Secrets/Secrets.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Secrets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Secrets;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.torbensko.secrets;
+				PRODUCT_NAME = Secrets;
+				PROVISIONING_PROFILE_SPECIFIER = "$(SECRETS_PROFILE_SPECIFIER)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		59D019BAF52E75DC0C350D08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.torbensko.SecretsTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Secrets.app/Contents/MacOS/Secrets";
+			};
+			name = Release;
+		};
+		9761CC1BFA29103747CE5298 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = D6WA425MQA;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SECRETS_UPDATE_CHANNEL = Development;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		A2B4A7E6ECFFD239952647FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5433ADEB9471A40F7F600DDE /* Updates.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Secrets/Secrets.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Secrets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Secrets;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.torbensko.secrets;
+				PRODUCT_NAME = Secrets;
+				PROVISIONING_PROFILE_SPECIFIER = "$(SECRETS_PROFILE_SPECIFIER)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B510A59D4E2030BD4F5C0E22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = D6WA425MQA;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SECRETS_UPDATE_CHANNEL = Development;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		13C361D01B36412923D688FA /* Build configuration list for PBXNativeTarget "SecretsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AC088B06AF365193A79C073 /* Debug */,
+				59D019BAF52E75DC0C350D08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		42507A8A5C9971C69BE94831 /* Build configuration list for PBXProject "Secrets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B510A59D4E2030BD4F5C0E22 /* Debug */,
+				9761CC1BFA29103747CE5298 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BE2852153D4D5AF8066FFB5D /* Build configuration list for PBXNativeTarget "Secrets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2B4A7E6ECFFD239952647FF /* Debug */,
+				3D2CFF93FDA2CCDA4F7DE668 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C37F893C298E029C772181B6 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = exactVersion;
+				version = 2.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2FA7580E12C0D3F8EB11DF92 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C37F893C298E029C772181B6 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 8D3191435FAD86CCCF928E13 /* Project object */;
+}
