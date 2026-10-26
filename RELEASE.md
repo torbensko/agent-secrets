@@ -4,7 +4,7 @@ Secrets follows the same release setup as Picker: Sparkle 2 for updates, and Git
 
 ## GitHub setup
 
-In [Actions secrets](https://github.com/torbensko/secrets/settings/secrets/actions), set the same secrets as Picker, plus a provisioning profile:
+In [Actions secrets](https://github.com/torbensko/secrets/settings/secrets/actions), set the same secrets as Picker:
 
 | Secret | Value |
 | --- | --- |
@@ -14,19 +14,14 @@ In [Actions secrets](https://github.com/torbensko/secrets/settings/secrets/actio
 | `APPLE_ID_PASSWORD` | App-specific password for that account |
 | `APPLE_TEAM_ID` | Developer team ID (`D6WA425MQA`) |
 | `SPARKLE_PRIVATE_KEY` | Secrets' own update-signing key; set by `scripts/configure-updates.sh` |
-| `PROVISIONING_PROFILE` | Base64-encoded **Developer ID** provisioning profile for `com.torbensko.secrets` |
 
-### Why Secrets needs a provisioning profile
+### Provisioning profile
 
 Picker doesn't need one; Secrets does. iCloud Keychain sync needs the `keychain-access-groups` entitlement, and macOS only honours that entitlement when it's authorised by a provisioning profile, including in Developer ID builds. Without one, the app won't launch.
 
-To create it: go to [Profiles](https://developer.apple.com/account/resources/profiles/add), choose **Developer ID** under Distribution, select the `com.torbensko.secrets` App ID, then select your Developer ID Application certificate. Download the profile, then run:
+The Developer ID profile is committed at `Config/Secrets_Developer_ID.provisionprofile`. It isn't secret, since every shipped app embeds it, and it authorises all of the team's Developer ID Application certificates. Xcode created it by exporting a Release archive with automatic Developer ID signing. To regenerate it, for example after adding a new Developer ID certificate, do the same with `-allowProvisioningUpdates`, then copy the new profile from `~/Library/Developer/Xcode/UserData/Provisioning Profiles`.
 
-```sh
-base64 -i ~/Downloads/Secrets_Developer_ID.provisionprofile | gh secret set PROVISIONING_PROFILE --repo torbensko/secrets
-```
-
-The release job checks the profile is a Developer ID profile for `com.torbensko.secrets` before using it. It also refuses to publish an app that's missing the entitlement or the embedded profile. Profiles expire, so renew this one when Apple says it's about to.
+The release job checks the profile is a Developer ID profile for `com.torbensko.secrets` before using it. It also refuses to publish an app that's missing the entitlement or the embedded profile.
 
 ### Update signing key
 

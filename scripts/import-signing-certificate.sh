@@ -1,5 +1,5 @@
 #!/bin/bash
-# Run only on an ephemeral GitHub runner; never print certificate, profile or password values.
+# Run only on an ephemeral GitHub runner; never print certificate or password values.
 set -euo pipefail
 : "${RUNNER_TEMP:?}"
 : "${GITHUB_ENV:?}"
@@ -24,10 +24,10 @@ IDENTITY="$(security find-identity -v -p codesigning "$KEYCHAIN_PATH" | sed -n '
 printf 'SIGNING_IDENTITY=%s\n' "$IDENTITY" >> "$GITHUB_ENV"
 
 # The Keychain entitlement is restricted, so the app must embed a Developer ID provisioning profile.
-: "${PROVISIONING_PROFILE:?Missing PROVISIONING_PROFILE secret}"
+# Profiles aren't secret (every shipped app carries one), so it's committed alongside the project.
 : "${APPLE_TEAM_ID:?Missing APPLE_TEAM_ID}"
 PROFILE_SOURCE="$RUNNER_TEMP/secrets.provisionprofile"
-printf '%s' "$PROVISIONING_PROFILE" | base64 --decode > "$PROFILE_SOURCE"
+cp Config/Secrets_Developer_ID.provisionprofile "$PROFILE_SOURCE"
 PROFILE_PLIST="$RUNNER_TEMP/secrets-profile.plist"
 security cms -D -i "$PROFILE_SOURCE" > "$PROFILE_PLIST"
 PROFILE_UUID="$(/usr/libexec/PlistBuddy -c 'Print :UUID' "$PROFILE_PLIST")"
