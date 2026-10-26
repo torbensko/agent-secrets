@@ -35,8 +35,6 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.torbensko.secrets
-        # Release builds pass SECRETS_PROFILE_SPECIFIER so only the app, not Sparkle, gets the profile.
-        PROVISIONING_PROFILE_SPECIFIER: $(SECRETS_PROFILE_SPECIFIER)
         PRODUCT_NAME: Secrets
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         CODE_SIGN_STYLE: Automatic

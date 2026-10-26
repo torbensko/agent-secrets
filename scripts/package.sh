@@ -20,7 +20,7 @@ if [[ "$mode" == release ]]; then
     : "${APPLE_TEAM_ID:?Missing APPLE_TEAM_ID}"
     : "${APPLE_ID:?Missing APPLE_ID}"
     : "${APPLE_ID_PASSWORD:?Missing APPLE_ID_PASSWORD}"
-    : "${PROFILE_UUID:?Missing Developer ID provisioning profile}"
+    : "${PROFILE_PATH:?Missing Developer ID provisioning profile}"
     [[ "$SIGNING_IDENTITY" == 'Developer ID Application:'* ]] || { echo 'A Developer ID Application certificate is required.' >&2; exit 1; }
     python3 - <<'PY'
 import base64, pathlib
@@ -29,18 +29,29 @@ assert len(base64.b64decode(key, validate=True)) == 32, 'Configure the Sparkle p
 PY
     xcodebuild "${common[@]}" archive -archivePath "$stage/Secrets.xcarchive" \
         CODE_SIGN_STYLE=Manual "CODE_SIGN_IDENTITY=$SIGNING_IDENTITY" "DEVELOPMENT_TEAM=$APPLE_TEAM_ID" \
-        SECRETS_UPDATE_CHANNEL=Release "SECRETS_PROFILE_SPECIFIER=$PROFILE_UUID"
+        SECRETS_UPDATE_CHANNEL=Release CODE_SIGN_ENTITLEMENTS=
     python3 - "$stage/ExportOptions.plist" <<'PY'
 import os, plistlib, sys
 with open(sys.argv[1], 'wb') as f:
     plistlib.dump({'method': 'developer-id', 'teamID': os.environ['APPLE_TEAM_ID'],
-                  'signingStyle': 'manual', 'signingCertificate': os.environ['SIGNING_IDENTITY'],
-                  'provisioningProfiles': {'com.torbensko.secrets': os.environ['PROFILE_UUID']}}, f)
+                  'signingStyle': 'manual', 'signingCertificate': os.environ['SIGNING_IDENTITY']}, f)
 PY
     # Xcode's export step also re-signs Sparkle's nested services and helpers.
     xcodebuild -exportArchive -archivePath "$stage/Secrets.xcarchive" \
         -exportOptionsPlist "$stage/ExportOptions.plist" -exportPath "$stage/export"
     ditto "$stage/export/Secrets.app" "$app"
+    # Xcode refuses its own cloud-managed profile under manual signing, so embed it and re-sign the app ourselves.
+    cp "$PROFILE_PATH" "$app/Contents/embedded.provisionprofile"
+    python3 - "$stage/Secrets.entitlements" <<'PY'
+import os, plistlib, sys
+team = os.environ['APPLE_TEAM_ID']
+with open(sys.argv[1], 'wb') as f:
+    plistlib.dump({'com.apple.application-identifier': f'{team}.com.torbensko.secrets',
+                   'com.apple.developer.team-identifier': team,
+                   'keychain-access-groups': [f'{team}.com.torbensko.secrets']}, f)
+PY
+    codesign --force --sign "$SIGNING_IDENTITY" --options runtime --timestamp \
+        --entitlements "$stage/Secrets.entitlements" "$app"
 else
     xcodebuild "${common[@]}" build CODE_SIGN_IDENTITY=- CODE_SIGN_STYLE=Manual \
         CODE_SIGN_ENTITLEMENTS= DEVELOPMENT_TEAM= ENABLE_HARDENED_RUNTIME=NO SECRETS_UPDATE_CHANNEL=Development

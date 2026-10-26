@@ -374,7 +374,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.torbensko.secrets;
 				PRODUCT_NAME = Secrets;
-				PROVISIONING_PROFILE_SPECIFIER = "$(SECRETS_PROFILE_SPECIFIER)";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -478,7 +477,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.torbensko.secrets;
 				PRODUCT_NAME = Secrets;
-				PROVISIONING_PROFILE_SPECIFIER = "$(SECRETS_PROFILE_SPECIFIER)";
 				SDKROOT = macosx;
 			};
 			name = Debug;
