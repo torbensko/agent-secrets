@@ -1,8 +1,6 @@
-Agent Secrets 0.1.1
+Agent Secrets 0.1.2
 ===================
 
-- Secrets is now called Agent Secrets.
-- A new full-bleed app icon that macOS rounds itself.
-- The app's executable has a new name, so set up your agents again from Settings → Agents. The MCP server is now called `agent-secrets`.
+- Fixed a crash when saving a credential while a field was still being edited.
 
 Requires macOS 15 or later.

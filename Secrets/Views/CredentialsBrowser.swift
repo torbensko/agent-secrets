@@ -59,8 +59,13 @@ struct CredentialsBrowser: View {
             list
                 .frame(minWidth: 250, idealWidth: 300, maxWidth: 420)
             Group {
-                if let draft = Binding($model.editing) {
-                    CredentialEditView(draft: draft)
+                if let current = model.editing {
+                    // A focused field commits after Save or Cancel clears the draft, so ignore late writes
+                    // rather than force-unwrapping a draft that no longer exists.
+                    CredentialEditView(draft: Binding(
+                        get: { model.editing ?? current },
+                        set: { if model.editing != nil { model.editing = $0 } }
+                    ))
                 } else if let selected {
                     CredentialDetailView(credential: selected)
                         .id(selected.id)

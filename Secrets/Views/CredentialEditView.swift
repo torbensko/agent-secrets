@@ -125,17 +125,25 @@ struct CredentialEditView: View {
         .formStyle(.grouped)
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
-                Button("Cancel") { model.cancelEditing() }
-                    .keyboardShortcut(.cancelAction)
-                Button("Save") { model.saveEditing() }
-                    .keyboardShortcut("s")
-                    .buttonStyle(.borderedProminent)
-                    .disabled(validationMessage != nil)
+                Button("Cancel") {
+                    endFieldEditing()
+                    model.cancelEditing()
+                }
+                .keyboardShortcut(.cancelAction)
+                Button("Save") {
+                    // Commit the focused field first so a value still being typed is saved.
+                    endFieldEditing()
+                    model.saveEditing()
+                }
+                .keyboardShortcut("s")
+                .buttonStyle(.borderedProminent)
+                .disabled(validationMessage != nil)
             }
         }
         .confirmationDialog("Delete “\(draft.trimmedName)”?", isPresented: $confirmDelete) {
             Button("Delete", role: .destructive) {
                 if let id = draft.credentialID, let credential = model.credentials.first(where: { $0.id == id }) {
+                    endFieldEditing()
                     model.cancelEditing()
                     model.delete(credential)
                 }
@@ -176,6 +184,10 @@ struct CredentialEditView: View {
             draft.projectIDs.insert(project.id)
             newProjectName = ""
         }
+    }
+
+    private func endFieldEditing() {
+        NSApp.keyWindow?.makeFirstResponder(nil)
     }
 }
 

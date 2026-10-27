@@ -25,6 +25,7 @@
 		9D562B3C3385C8934DF4864F /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DE0845C5F7B3613797417C /* Models.swift */; };
 		9DF59BEBAAD1C31E4B3C811D /* FoldersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89742C9E1BAB8546954E1E94 /* FoldersView.swift */; };
 		A918D8908303DB2DE7F4C659 /* IconFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCA2E68EEB8E8FA3F0C8862 /* IconFetcher.swift */; };
+		CC3436BF6B81852D958844D1 /* EditingBindingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C71C767A9A14F9037E80F /* EditingBindingTests.swift */; };
 		CC57952F1210AED220058C66 /* MCPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0422C806EF1A0878D0BCEA91 /* MCPServer.swift */; };
 		D0894C982998FDC8B3953F4E /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 2FA7580E12C0D3F8EB11DF92 /* Sparkle */; };
 		D60F559F44FAC498D47A91F6 /* UpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E126DB2B8860B877AB63445 /* UpdateController.swift */; };
@@ -56,6 +57,7 @@
 		48967D0A0DEF965525F53B50 /* LocalStores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStores.swift; sourceTree = "<group>"; };
 		5433ADEB9471A40F7F600DDE /* Updates.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Updates.xcconfig; sourceTree = "<group>"; };
 		628F969FA87784332EDDDF9B /* ServiceTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTemplate.swift; sourceTree = "<group>"; };
+		746C71C767A9A14F9037E80F /* EditingBindingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingBindingTests.swift; sourceTree = "<group>"; };
 		77F4857E00F7E1672975B1AE /* MCPServerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCPServerTests.swift; sourceTree = "<group>"; };
 		78B9DD44762DBA880F994142 /* IconCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCache.swift; sourceTree = "<group>"; };
 		7C5139DFA657C51B01268C60 /* Secrets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Secrets.entitlements; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				343A124AAF171449B55A9AD2 /* AccessResolverTests.swift */,
+				746C71C767A9A14F9037E80F /* EditingBindingTests.swift */,
 				77F4857E00F7E1672975B1AE /* MCPServerTests.swift */,
 			);
 			path = SecretsTests;
@@ -295,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A864EFF8ABEB99288BAA7E3 /* AccessResolverTests.swift in Sources */,
+				CC3436BF6B81852D958844D1 /* EditingBindingTests.swift in Sources */,
 				6FB7DB11682F7F6DDAE25525 /* MCPServerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,7 +452,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.1.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -540,7 +544,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.1.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
